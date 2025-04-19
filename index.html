@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parth Sharma | Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+  <button id="darkModeToggle">Toggle Dark Mode</button>
+
+  <header>
+    <div class="header-wrapper">
+      <div class="social-icons">
+        <a href="https://github.com/yourusername" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        </a>
+        <a href="mailto:youremail@example.com">
+          <img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email" />
+        </a>
+        <a href="https://leetcode.com/yourusername" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" />
+        </a>
+        <a href="https://discord.com/users/yourID" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord" />
+        </a>
+      </div>
+  
+      <div class="profile-container">
+        <img src="images/me.jpg" alt="Profile Picture" id="tilt-pfp" class="profile-pic" />
+      </div>
+      <h1>Hi, I'm Parth Sharma</h1>
+      <p>Hi, I'm a beginner web developer with a passion for learning and building cool things on the web.<br>
+        This portfolio is my journey — and I'm excited to keep learning, improving, and sharing what I create!
+      </p>
+    </div>
+  </header>
+  
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+
+      <div class="leetcode-progress">
+        <span>LeetCode</span>
+        <p><strong>1</strong> question solved out of <strong>300</strong></p>
+      </div>
+      
+      <span>HTML</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 5%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>CSS</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 2%"></div>
+      </div>
+    </div>
+  
+    <div class="skill">
+      <span>Python</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 8%"></div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>Project</h3>
+        <p>A brief description of what this project is about.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/Project_1.png" alt="Example Project" class="project-image">
+        <h3>Portfolio Website</h3>
+        <p>This is my personal portfolio site where I showcase my skills, progress, and projects. Built using HTML, CSS, and pure creativity.</p>
+        <a href="https://yourgithubusername.github.io/portfolio" class="project-link" target="_blank">View Live</a>
+      </div>
+      
+    </div>
+  </section>
+  
+  <script>
+    const image = document.getElementById("tilt-pfp");
+
+    document.addEventListener("mousemove", (e) => {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const offsetX = (e.clientX - centerX) / 40;
+      const offsetY = (e.clientY - centerY) / 40;
+      image.style.transform = `rotateY(${offsetX}deg) rotateX(${-offsetY}deg)`;
+    });
+
+    document.addEventListener("mouseleave", () => {
+      image.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    });
+
+    const toggleButton = document.getElementById('darkModeToggle');
+
+    function updateButtonIcon() {
+      if (document.body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '☀️ Light Mode';
+      } else {
+        toggleButton.textContent = '🌙 Dark Mode';
+      }
+    }
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      updateButtonIcon();
+    });
+
+    updateButtonIcon();
+  </script>
+</body>
+</html>
